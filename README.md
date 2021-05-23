@@ -133,6 +133,28 @@ eslint --ext .js,.svelte src
 eslint "src/**/*.{js,svelte}"
 ```
 
+### Used in combination with TypeScript
+
+When using a Svelte file written in TypeScript, the following settings are additionally required in `.eslintrc. *`.
+
+Example **.eslintrc.js**:
+
+```js
+module.exports = {
+  // ...
+  "overrides": [
+    {
+        "files": ["*.svelte"],
+        "parser": "svelte-eslint-parser",
+        "parserOptions": {
+           "parser": "@typescript-eslint/parser"
+        }
+    }
+  ]
+  // ...
+}
+```
+
 ## :computer: Editor Integrations
 
 ### Visual Studio Code
